@@ -17,6 +17,13 @@
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+  /**
+  * Function to handle log in process
+  * Take email and password data, see if they match each other
+  */
+
+
   public function login()
   {
     $email = $this->input->post('email', TRUE);
@@ -56,7 +63,6 @@
   }
 
   public function register() {
-    // Get inputs from user
     $email = $this->input->post('email', TRUE);
     $password = $this->input->post('password', TRUE);
     $name = $this->input->post('name', TRUE);
