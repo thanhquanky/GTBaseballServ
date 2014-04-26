@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/**
+ * GT Baseball Team_model class
+ * @package   CodeIgniter
+ * @subpackage  Libraries
+ * 
+ */
 class Team extends CI_Controller {
 
 	/**
@@ -17,11 +22,20 @@ class Team extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+        
+        /**
+         *index
+         *Load all of the teams' data in json format
+         */
 	public function index()
 	{
 		$this->load->model('team_model');
     	echo json_encode($this->team_model->get_all());
 	}
+        /**
+         *get_by_id
+         *Load the data of the team with the specified id in json format.
+         */
 	public function get_by_id() {
 		$team_id = $this->input->post('team_id', TRUE);
 		$this->load->model('team_model');
