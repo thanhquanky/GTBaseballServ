@@ -1,91 +1,71 @@
 <?php
 /**
- * GT Baseball Player_model class
+ * GT Baseball Team_model class
  * @package   CodeIgniter
  * @subpackage  Libraries
  * 
  */
-class Player_model extends CI_Model {
 
-    private $number   = '';
+class Team_model extends CI_Model {
+
+    private $team_id   = '';
     private $name = '';
-    private $school_id = '';
-    private $position = '';
-    private $award = '';
-    private $story = '';
-    private $dob = '';
+    private $school = '';
+    private $coach = '';
     /** 
     *Overloaded CI model  constructor: __construct()
     *
     */
+
     function __construct()
     {
+        // Call the Model constructor
         parent::__construct();
     }
-    /**
+     /**
     * initialize
-    * Set the value for the object's data member $email, $password, $name
-    * @param string 
+    * Set the value for the object's data member $game_id, $player_id, $user_id
+    * @param int: The id number of the game 
+    * @param int: The id number of the player
+    * @param int: The id number of the user.
     */
 
-    function initialize($email, $password, $name)
+    function initialize($game_id, $player_id, $user_id)
     {
-        $this->email = $email;
-        $this->password = $password;
-        $this->name = $name;
     }
     /**
    *get_all
-   * Run the selection query to retrieve all data from all players in database.
+   * Run the selection query to retrieve all data from all teams in database.
    * 
    */
+
     function get_all()
     {
-        $query = $this->db->get('players');
+        $query = $this->db->get('teams');
         return $query->result();
     }
     /**
-     *get_last_ten__entries
-     *Run the selection query to retrive datas from the last ten entries in database.
-     *@param string:
-     *@param int: limit of entries to retrieve data. 
+     *get_by_id
+     *Retrieve data of the team member that has the specified team id
+     *param int
      */
-    function get_last_ten_entries()
-    {
-        $query = $this->db->get('entries', 10);
-        return $query->result();
+    function get_by_id($team_id) {
+        $query = $this->db->get_where('teams', array('team_id' => $team_id));
+        return $query->row();
     }
     /**
-     * login
-     **/
-
-    function login()
-    {
-        //$query
-    }
-    /**
-     *generate_token
-     *Create a random temporary token for the 
-     */
-
-    function generate_token() {
-        return md5(time() * rand() * rand() * microtime() + 'AWEQX#EQEqc3cqc1E212X');
-    }
-    /**
-     *insert
-     *Import data from class' object to database user's object.
-     *
-     */
+    *get_all
+    * Import data from Team_model class object to database's team objects.
+    * 
+    */
 
     function insert()
     {
-        $this->token = generate_token();
-        $this->db->insert('users',
+        $this->db->insert('teams',
                           array(
-                            'email' => $this->email,
-                            'password' => md5($this->password),
                             'name' => $this->name,
-                            'token' => generate_token()
+                            'school' => $this->school,
+                            'coach' => $this->coach
                           )
                          );
 
