@@ -20,10 +20,9 @@
 
   /**
   * Function to handle log in process
-  * Take email and password user type in, see if they match of a any package of email address and passage in database.
+  * Take email and password user type in, see if they match email and password of an "user" object in database.
   *@access public
   */
-
 
   public function login()
   {
@@ -62,7 +61,11 @@
     return json_encode($response);
 
   }
-
+   /**
+  * Function to handle registering process
+  * Take a name, an email and a password that user type in, store in an "user" object in database.
+  *@access public
+  */
   public function register() {
     $email = $this->input->post('email', TRUE);
     $password = $this->input->post('password', TRUE);
