@@ -24,7 +24,7 @@ class Player_model extends CI_Model {
     }
     /**
     * initialize
-    * Passing values of 3 parameters to the object's data member email, password and name
+    * Set the value for the object's data member $email, $password, $name
     * @param string 
     */
 
@@ -65,7 +65,7 @@ class Player_model extends CI_Model {
     }
     /**
      *generate_token
-     *Create a random temporary token.
+     *Create a random temporary token for the 
      */
 
     function generate_token() {
@@ -73,7 +73,7 @@ class Player_model extends CI_Model {
     }
     /**
      *insert
-     *Insert an array of data into users object.
+     *Import data from class' object to database user's object.
      *
      */
 
