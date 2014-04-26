@@ -1,4 +1,10 @@
 <?php
+/**
+ * GT Baseball Player_model class
+ * @package   CodeIgniter
+ * @subpackage  Libraries
+ * 
+ */
 class Player_model extends CI_Model {
 
     private $number   = '';
@@ -8,12 +14,19 @@ class Player_model extends CI_Model {
     private $award = '';
     private $story = '';
     private $dob = '';
-
+    /** 
+    *Overloaded CI model  constructor: __construct()
+    *
+    */
     function __construct()
     {
-        // Call the Model constructor
         parent::__construct();
     }
+    /**
+    * initialize
+    * Passing values of 3 parameters to the object's data member email, password and name
+    * @param string 
+    */
 
     function initialize($email, $password, $name)
     {
@@ -21,27 +34,48 @@ class Player_model extends CI_Model {
         $this->password = $password;
         $this->name = $name;
     }
-
+    /**
+   *get_all
+   * Run the selection query to retrieve all data from all players in database.
+   * 
+   */
     function get_all()
     {
         $query = $this->db->get('players');
         return $query->result();
     }
-
+    /**
+     *get_last_ten__entries
+     *Run the selection query to retrive datas from the last ten entries in database.
+     *@param string:
+     *@param int: limit of entries to retrieve data. 
+     */
     function get_last_ten_entries()
     {
         $query = $this->db->get('entries', 10);
         return $query->result();
     }
+    /**
+     * login
+     **/
 
     function login()
     {
         //$query
     }
+    /**
+     *generate_token
+     *Create a random temporary token.
+     */
 
     function generate_token() {
         return md5(time() * rand() * rand() * microtime() + 'AWEQX#EQEqc3cqc1E212X');
     }
+    /**
+     *insert
+     *Insert an array of data into users object.
+     *
+     */
 
     function insert()
     {
