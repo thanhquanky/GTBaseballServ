@@ -20,18 +20,19 @@
 
   /**
   * Function to handle log in process
-  * Take email and password data, see if they match each other
+  * Take email and password user type in, see if they match of a any package of email address and passage in database.
+  *@access public
   */
 
 
   public function login()
   {
+    //Take the email, password string input by user and store it in the corresponding variable
     $email = $this->input->post('email', TRUE);
-
     $password = $this->input->post('password', TRUE);
-
+    //Change the password of string into hash value
     $password = md5($password);
-
+    // Load user model 
     $this->load->model('user_model');
     $matched_user = $this->user_model->get_by_email($email);
     var_dump($matched_user);
