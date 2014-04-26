@@ -65,7 +65,7 @@ class Player_model extends CI_Model {
     }
     /**
      *generate_token
-     *Create a random temporary token for the 
+     *Create a random token which acts as a temporary id.
      */
 
     function generate_token() {
