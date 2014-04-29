@@ -27,13 +27,9 @@
 
   /**
   * Function to handle log in process
-<<<<<<< HEAD
   * Take email and password user type in, see if they match of a any package of email address and passage in database.
   *@access public
-  */
 
-
-=======
   * Take email and password user type in, see if they match email and password of an "user" object in database.
   *@access public
   */
