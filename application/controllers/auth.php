@@ -1,5 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-<<<<<<< HEAD
 
 =======
 	/**
@@ -8,7 +7,6 @@
  * @subpackage  Libraries
  * 
  */
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
   class Auth extends CI_Controller {
 
   /**
@@ -40,13 +38,11 @@
   *@access public
   */
 
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
   public function login()
   {
     //Take the email, password string input by user and store it in the corresponding variable
     $email = $this->input->post('email', TRUE);
     $password = $this->input->post('password', TRUE);
-<<<<<<< HEAD
     //Change the password from string into hash value
     $password = md5($password);
     // Load user model 
@@ -57,7 +53,6 @@
     $response = array('status' => '', 'data' => '', 'message' => '');
     
     // If $matched_user is null, status is set to be failed.
-=======
     //Change the password of string into hash value
     $password = md5($password);
     // Load user model 
@@ -66,25 +61,18 @@
     var_dump($matched_user);
     $response = array('status' => '', 'data' => '', 'message' => '');
 
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
     if (!isset($matched_user))
     {
       $response['status'] = 'failed';
       $response['message'] = 'Email does not exist';
     }
-<<<<<<< HEAD
     // If $matched_user is set but the $password user input does not match with password stored in $matched_user. status is set to be failed
-=======
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
     else if ($password != $matched_user->password)
     {
       $response['status'] = 'failed';
       $response['message'] = 'Invalid password';
     }
-<<<<<<< HEAD
     // If both of them happens, status is set to be success
-=======
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
     else
     {
       $response['status'] = 'success';
@@ -99,15 +87,11 @@
     return json_encode($response);
 
   }
-<<<<<<< HEAD
     /**
   * Function to handle register process
   * Take the name, email and password user type in, store in an object in the database.
-=======
-   /**
   * Function to handle registering process
   * Take a name, an email and a password that user type in, store in an "user" object in database.
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
   *@access public
   */
   public function register() {
