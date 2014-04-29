@@ -1,14 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-<<<<<<< HEAD
 
-=======
 /**
  * GT Baseball Player class
  * @package   CodeIgniter
  * @subpackage  Libraries
  * 
  */
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
 class Player extends CI_Controller {
 
 	/**
@@ -26,12 +23,7 @@ class Player extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
-<<<<<<< HEAD
-	public function index()
-	{
-		$this->load->model('player_model');
-    var_dump($this->player_model->get_all());
-=======
+	
         
         /**
          *index
@@ -40,7 +32,7 @@ class Player extends CI_Controller {
 	public function index()
 	{
 		$this->load->model('player_model');
-    	echo json_encode($this->player_model->get_all());
+    		echo json_encode($this->player_model->get_all());
 	}
         /**
          *get_all_from_team
@@ -63,7 +55,6 @@ class Player extends CI_Controller {
 		}
 		echo json_encode($players);
 
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
 	}
 }
 
