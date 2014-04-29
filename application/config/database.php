@@ -50,11 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-<<<<<<< HEAD
 $db['default']['password'] = 'estadium';
-=======
-$db['default']['password'] = '';
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
 $db['default']['database'] = 'gtbaseball';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
