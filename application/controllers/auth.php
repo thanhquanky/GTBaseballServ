@@ -53,7 +53,6 @@
     // Load user model 
     $this->load->model('user_model');
     $matched_user = $this->user_model->get_by_email($email);
-    var_dump($matched_user);
     $response = array('status' => '', 'data' => '', 'message' => '');
 
     if (!isset($matched_user))
