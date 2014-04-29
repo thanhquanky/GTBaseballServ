@@ -1,13 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-<<<<<<< HEAD
-=======
+
 /**
  * GT Baseball Game class
  * @package   CodeIgniter
  * @subpackage  Libraries
  * 
  */
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
 
 class Game extends CI_Controller {
 
@@ -25,16 +23,13 @@ class Game extends CI_Controller {
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-<<<<<<< HEAD
-=======
+
         
         /**
          *vote
          *Store the data of a vote: $user_id, $game_id, $player_id in a vote model
          *@access public
          */
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
 	public function vote()
 	{
 		$game_id = $this->input->post('game_id', TRUE);
@@ -46,16 +41,13 @@ class Game extends CI_Controller {
         $this->vote_model->initialize($game_id, $player_id, $user_id);
         $this->vote_model->insert();
 	}
-<<<<<<< HEAD
 
-=======
         /**
          *index
          *display all games' datas (hometeam_id and awayteam_id) in a json format.
          *@access public
          */
     
->>>>>>> acd3274f6711d77c565ac9b7f223cc7af9ba57fc
     public function index()
     {
         // load models
